@@ -99,7 +99,7 @@ just lint-docker  # lint and format check with the pinned golangci-lint, no loca
 
 `just check` needs [golangci-lint](https://golangci-lint.run/docs/welcome/install/local/) v2.14.0 or later (earlier releases cannot read a Go 1.27 module); `just lint-docker` runs that exact version in Docker instead.
 
-Versions follow [Semantic Versioning](https://semver.org/) and are recorded in [`CHANGELOG.md`](CHANGELOG.md). A release is a git tag with the `v` prefix that Go modules require, for example `git tag -a v1.0.0 -m "v1.0.0"`; `just build`, `just dist` and `just docker-build` read the version from that tag.
+Versions follow [Semantic Versioning](https://semver.org/) and are recorded in [`CHANGELOG.md`](CHANGELOG.md). A release is a git tag with the `v` prefix that Go modules require, for example `git tag -a v1.0.0 -m "v1.0.0"`; `just build`, `just dist` and `just docker-build` read the version from that tag. Pushing the tag (`git push origin v1.0.0`) runs the release workflow (`.github/workflows/release.yml`), which tests the code, builds the archives with `just dist`, runs each binary on its own platform and publishes the GitHub release with the notes from `CHANGELOG.md`.
 
 ## Resources
 

@@ -29,17 +29,28 @@ default:
 build:
     go build -trimpath -ldflags "{{ ldflags }}" -o bin/zy-stats-go ./cmd/zy-stats-go
 
-# Cross-compile release binaries for every supported target into dist/
+# Cross-compile release archives for every supported target into dist/ (tar.gz, zip on Windows, plus SHA256SUMS)
 [group('build')]
 dist:
     #!/usr/bin/env sh
     set -eu
+    # No macOS AppleDouble (._*) files in the archives.
+    export COPYFILE_DISABLE=1
     rm -rf dist && mkdir -p dist
-    for target in linux/amd64 linux/arm64 darwin/amd64 darwin/arm64 windows/amd64; do
+    for target in linux/amd64 linux/arm64 darwin/amd64 darwin/arm64 windows/amd64 windows/arm64; do
       os=${target%/*}; arch=${target#*/}
+      name="zy-stats-go-{{ version }}-$os-$arch"
       ext=""; [ "$os" = windows ] && ext=".exe"
+      mkdir "dist/$name"
       CGO_ENABLED=0 GOOS=$os GOARCH=$arch go build -trimpath -ldflags "{{ ldflags }}" \
-        -o "dist/zy-stats-go-{{ version }}-$os-$arch$ext" ./cmd/zy-stats-go
+        -o "dist/$name/zy-stats-go$ext" ./cmd/zy-stats-go
+      cp README.md LICENSE CHANGELOG.md .env.example "dist/$name/"
+      if [ "$os" = windows ]; then
+        (cd dist && zip -qr "$name.zip" "$name")
+      else
+        tar --no-xattrs -czf "dist/$name.tar.gz" -C dist "$name"
+      fi
+      rm -r "dist/$name"
     done
     (cd dist && shasum -a 256 zy-stats-go-* > SHA256SUMS)
     ls -l dist

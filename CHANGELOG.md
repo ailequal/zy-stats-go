@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic re-login once when the router expires the session (HTTP 504 or 401), and logout on shutdown.
 - Clear error messages for wrong credentials, locked accounts, session limits and unreachable routers, with exit codes `0` (success), `1` (runtime error) and `2` (invalid flags or configuration).
 - `--version` flag that prints the version, the Go toolchain, the build date and the platform.
-- Static binaries for Linux and macOS (amd64, arm64) and Windows (amd64), with SHA-256 checksums.
+- Release archives for Linux, macOS and Windows on amd64 and arm64, built by a release workflow on every version tag, smoke-tested on each platform and published with SHA-256 checksums and build provenance attestations.
 - Docker setup: a distroless production image running as a non-root user, and a development container that runs from source.
 - Fake FWA505 router for tests and manual end-to-end runs (`just fakemodem`).
 
