@@ -1,0 +1,11 @@
+{
+  "_synthetic": true,
+  "result": "ZCFG_SUCCESS",
+  "ReplyMsg": "",
+  "ReplyMsgMultiLang": "",
+  "Object": [
+    {
+      "INTF_Status": "Up"
+    }
+  ]
+}

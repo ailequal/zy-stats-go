@@ -1,0 +1,19 @@
+# Development: run from source with the Go toolchain and the repository
+# mounted. Compose loads this file automatically with compose.yaml.
+services:
+  zy-stats-go:
+    build: !reset null
+    image: golang:1.27-alpine@sha256:f92b6ef800e499660581efdabdf25d9d817a9d124eaf900924f0504e7e27e12d
+    container_name: zy-stats-go-dev
+    working_dir: /app
+    # Build, then exec the binary (not go run): it becomes PID 1, receives the
+    # stop signal itself and exits 0 on a clean shutdown.
+    command: ["sh", "-c", "go build -o /tmp/zy-stats-go ./cmd/zy-stats-go && exec /tmp/zy-stats-go"]
+    volumes:
+      - .:/app
+      - go-mod-cache:/go/pkg/mod
+      - go-build-cache:/root/.cache/go-build
+
+volumes:
+  go-mod-cache:
+  go-build-cache:

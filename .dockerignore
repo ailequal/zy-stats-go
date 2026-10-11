@@ -1,0 +1,12 @@
+# Allowlist: the image is built from the Go module only. Everything else
+# (docs, fixtures, .env, logs, build output) never enters the build context.
+*
+!go.mod
+!go.sum
+!cmd/
+!internal/
+
+# Test code is not part of the binary: keeping it out shrinks the context and
+# stops test edits from invalidating the build cache.
+**/*_test.go
+internal/zyxel/zyxeltest/

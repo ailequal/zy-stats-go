@@ -1,0 +1,27 @@
+
+
+  ===========================================
+  LTE Network Stats
+  -------------------------------------------
+  Technology: N/A
+  PLMN:       N/A
+  ENB ID:     N/A
+  Cell ID:    N/A
+  PCI:        N/A
+  EARFCN:     N/A
+  LTEItaly:   N/A
+  -------------------------------------------
+  Primary Band: N/A
+  CA Bands:     None
+  -------------------------------------------
+  Signal Quality (4G LTE)
+  RSRP: N/A     [N/A]                      
+  RSRQ: N/A     [N/A]                      
+  SINR: N/A     [N/A]                      
+  RSSI: N/A     [N/A]                      
+  -------------------------------------------
+  5G NSA Status: Disabled
+  -------------------------------------------
+  Report generated at: 2026-01-01 00:00:00
+  ===========================================
+  

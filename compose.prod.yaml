@@ -1,0 +1,27 @@
+# Production: the distroless image built from the Dockerfile.
+services:
+  zy-stats-go:
+    build:
+      target: prod
+    container_name: zy-stats-go
+    # The image runs as nonroot (uid 65532). Map it to the host user so ./logs
+    # stays writable (ZY_UID/ZY_GID in the shell or .env), or keep the default
+    # and run `chown 65532 logs` once.
+    user: "${ZY_UID:-65532}:${ZY_GID:-65532}"
+    environment:
+      # The pretty report is watched with `docker compose logs -f`.
+      FORCE_COLOR: "1"
+    volumes:
+      # A missing .env is an error instead of an empty directory silently
+      # created on the host.
+      - type: bind
+        source: ./.env
+        target: /app/.env
+        read_only: true
+        bind:
+          create_host_path: false
+      - ./logs:/app/logs
+    # The loop re-logs in once on a lost session; a persistent failure such
+    # as a wrong password still exits 1, so restarts are capped to avoid a login
+    # storm that could lock the router account.
+    restart: on-failure:3

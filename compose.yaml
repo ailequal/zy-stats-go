@@ -1,0 +1,19 @@
+# Base configuration, shared by both modes:
+#   development: docker compose                                   (adds compose.override.yaml)
+#   production:  docker compose -f compose.yaml -f compose.prod.yaml
+services:
+  zy-stats-go:
+    build:
+      context: .
+      args:
+        VERSION: ${VERSION:-dev}
+        VCS_REF: ${VCS_REF:-unknown}
+        BUILD_DATE: ${BUILD_DATE:-}
+    environment:
+      # Daily log files roll over at local midnight of this zone.
+      TZ: ${TZ:-Europe/Rome}
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,36 @@
+
+
+  ===========================================
+  LTE Network Stats
+  -------------------------------------------
+  Technology: NR5G-NSA
+  PLMN:       22288
+  ENB ID:     654321
+  Cell ID:    167506178
+  PCI:        200
+  EARFCN:     9435
+  LTEItaly:   https://lteitaly.it/internal/map.php#bts=22288.654321
+  -------------------------------------------
+  Primary Band: Bb28 (0MHz/10MHz)
+  CA Bands:     None
+  -------------------------------------------
+  Signal Quality (4G LTE)
+  RSRP:  -95 dBm [█████████████            ]
+  RSRQ:  -12 dB  [████████████             ]
+  SINR:    5 dB  [███████                  ]
+  RSSI:  -60 dBm [█████████████████████    ]
+  -------------------------------------------
+  5G NSA Status: Enabled
+  NR Band:      N78 (80MHz/0MHz)
+  NR PCI:       501
+  NR ARFCN:     640000
+  -------------------------------------------
+  Signal Quality (5G NR)
+  RSRP: -101 dBm [██████████               ]
+  RSRQ: N/A     [N/A]                      
+  SINR:    9 dB  [██████████               ]
+  RSSI: N/A     [N/A]                      
+  -------------------------------------------
+  Report generated at: 2026-01-01 00:00:00
+  ===========================================
+  

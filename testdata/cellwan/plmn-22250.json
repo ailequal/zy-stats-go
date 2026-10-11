@@ -1,0 +1,32 @@
+{
+  "_synthetic": true,
+  "result": "ZCFG_SUCCESS",
+  "ReplyMsg": "",
+  "ReplyMsgMultiLang": "",
+  "Object": [
+    {
+      "INTF_Status": "Up",
+      "INTF_Current_Access_Technology": "NR5G-NSA",
+      "INTF_Network_In_Use": "Current_Iliad_NR5G-NSA_22250",
+      "INTF_RSSI": -60,
+      "INTF_Current_Band": "b28",
+      "INTF_Cell_ID": 167506178,
+      "INTF_PhyCell_ID": 200,
+      "INTF_Uplink_Bandwidth": "10M",
+      "INTF_Downlink_Bandwidth": "",
+      "INTF_RFCN": "9435",
+      "INTF_RSRP": -95,
+      "INTF_RSRQ": -12,
+      "INTF_SINR": 5,
+      "NSA_Enable": true,
+      "NSA_PhyCellID": 501,
+      "NSA_RFCN": 640000,
+      "NSA_Band": "n78",
+      "NSA_UplinkBandwidth": "",
+      "NSA_DownlinkBandwidth": "80M",
+      "NSA_RSRP": -101,
+      "NSA_SINR": 9,
+      "SCC_Info": []
+    }
+  ]
+}

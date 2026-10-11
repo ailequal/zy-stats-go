@@ -1,0 +1,1 @@
+{"technology":"LTE","plmn":"22288","enbId":123456,"cellId":31604737,"pci":100,"earfcn":3350,"lteItalyLink":"https://lteitaly.it/internal/map.php#bts=22288.123456","currentBand":"B7 (20MHz/20MHz)","caInfo":"None","rsrp":-100,"rsrq":-13,"sinr":2,"rssi":-71,"nsa":{"enabled":false,"band":"N/A","pci":"N/A","arfcn":"N/A"},"timestamp":"2026-01-01T00:00:00.000Z"}

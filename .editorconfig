@@ -1,0 +1,27 @@
+# EditorConfig: https://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# gofmt owns Go formatting: tabs.
+[*.go]
+indent_style = tab
+
+[{go.mod,go.sum}]
+indent_style = tab
+
+# just --fmt (the official formatter) indents recipes with four spaces.
+[justfile]
+indent_style = space
+indent_size = 4
+
+# Golden files are byte-exact reference output.
+[testdata/**]
+trim_trailing_whitespace = false
+insert_final_newline = false

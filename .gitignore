@@ -1,0 +1,33 @@
+# Build output (just build, just dist)
+/bin/
+/dist/
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Code coverage profiles and other test artifacts
+*.out
+coverage.*
+*.coverprofile
+profile.cov
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Local configuration with the router credentials
+.env
+
+# Daily log files written by the program; the directory itself is kept
+logs/*
+!logs/.gitkeep
+
+# macOS Finder metadata
+.DS_Store
